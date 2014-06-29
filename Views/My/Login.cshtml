@@ -1,0 +1,54 @@
+﻿@model Shop.Models.Admin
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+
+ <div id="content" class="float_r">
+    <div id="contact_form">
+
+<h2>Admin Login.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    
+        
+        
+                 <label>Admin Name</label>
+                
+                @Html.TextBoxFor(m => m.name)
+                @Html.ValidationMessageFor(m => m.name)
+                <div class="cleaner h10"></div>
+            
+            <label>Admin Password</label>
+                
+                @Html.PasswordFor(m => m.password)
+                @Html.ValidationMessageFor(m => m.password)
+                <div class="cleaner h10"></div>
+            
+            
+                
+            
+        
+        <input type="submit" value="Log in" />
+    
+   
+}
+        </div>
+         </div>
+
+
+
+
+
+            
+
+            @* This below line is for create javascript section *@
+
+            @section Scripts{
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        

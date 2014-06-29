@@ -1,0 +1,55 @@
+﻿@model Shop.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+<header>
+    <link href="~/Content/style.css" rel="stylesheet" />
+        </header>
+<body>
+    
+
+
+
+     <div id="content" class="float_r">
+    <div id="contact_form">
+
+         <h1>@ViewBag.Title.</h1>
+    <h2>Create a new account.</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    
+     
+       
+        
+         
+               @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+           <div class="cleaner h10"></div>
+            
+           
+            
+             @Html.LabelFor(m => m.Password) 
+                @Html.PasswordFor(m => m.Password)
+           <div class="cleaner h10"></div>
+           
+
+            
+              @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword)  
+           <div class="cleaner h10"></div>
+            
+      
+       
+              
+     <input type="submit" value="Register" />
+         
+}
+        </div>
+          
+        </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+    </body>

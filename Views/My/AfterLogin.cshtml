@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "AfterLogin";
+}
+
+<h2>Admin Panel</h2>
+ <div id="templatemo_main">
+   		<div id="sidebar" class="float_l">
+        	<div class="sidebar_box"><span class="bottom"></span>
+            	<h3>Admin Panel</h3>  
+                  @using (Html.BeginForm("LogOff", "My", FormMethod.Post, new { id = "logoutForm" })) {
+                              @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a> 
+                  }
+                <div class="content"> 
+                	<ul class="sidebar_list">
+                       
+            
+        
+                    	<li class="first">@Html.ActionLink("Add New Product", "Create", "Product")</li>
+                          <li class="first">@Html.ActionLink("Add New Admin", "Create", "My")</li>   
+                        <li class="first">@Html.ActionLink("Show All Products", "Index", "Product")</li> 
+                        <li class="first">@Html.ActionLink("Remove Product", "Delete", "Product")</li>                                 
+                        <li class="last">@Html.ActionLink("Admin", "Login", "My")</li>
+                        
+                    </ul>
+                </div>
+            </div>
+               </div>
+        </div>
